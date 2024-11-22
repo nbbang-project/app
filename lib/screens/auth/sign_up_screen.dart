@@ -16,12 +16,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          Spacer(),
           const Center(child: CustomLogo()),
           const Padding(
             padding: EdgeInsets.fromLTRB(30, 50, 30, 0),
@@ -43,53 +45,57 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 hint: "비밀번호 확인", obscureText: true, hideIcon: true),
           ),
           Padding(
-              padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
-              child: SizedBox(
-                width: double.infinity,
-                height: 58,
-                child: FilledButton(
-                  onPressed: () {},
-                  style: const ButtonStyle(
-                    backgroundColor:
+            padding: EdgeInsets.fromLTRB(30, 20, 30, 10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 58,
+                    child: FilledButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                        backgroundColor:
                         WidgetStatePropertyAll(CupertinoColors.activeBlue),
-                  ),
-                  child: const Text(
-                    "회원가입",
-                    style: TextStyle(
-                        fontFamily: "Paperlogy",
-                        fontWeight: FontWeight.w800,
-                        fontSize: 16,
-                        color: Colors.white),
-                  ),
+
+                      ),
+                      child: const Text(
+                        "회원가입",
+                        style: TextStyle(
+                            fontFamily: "Paperlogy",
+                            fontWeight: FontWeight.w800,
+                            fontSize: 16,
+                            color: Colors.white),
+                      ),
+                    ),
+                  )
                 ),
-              )),
-          Padding(
-              padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
-              child: SizedBox(
-                width: double.infinity,
-                height: 58,
-                child: FilledButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => const SignInScreen()
-                      )
-                    );
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.onSurface),
-                    side: const WidgetStatePropertyAll(BorderSide(color: CupertinoColors.activeBlue)),
-                  ),
-                  child: const Text(
-                    "로그인",
-                    style: TextStyle(
-                        fontFamily: "Paperlogy",
-                        fontWeight: FontWeight.w800,
-                        fontSize: 16,
-                        color: CupertinoColors.activeBlue),
-                  ),
-                ),
-              )),
+                const SizedBox(width: 10,),
+                Expanded(
+                  child: SizedBox(
+                    height: 58,
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.onSurface),
+                        side: const WidgetStatePropertyAll(BorderSide(color: CupertinoColors.activeBlue)),
+                      ),
+                      child: const Text(
+                        "로그인",
+                        style: TextStyle(
+                            fontFamily: "Paperlogy",
+                            fontWeight: FontWeight.w800,
+                            fontSize: 16,
+                            color: CupertinoColors.activeBlue),
+                      ),
+                    ),
+                  )
+                )
+              ],
+            ),
+          ),
+          Spacer(flex: 2,)
         ],
       ),
     ));
