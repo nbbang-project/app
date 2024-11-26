@@ -31,14 +31,6 @@ class _SignInScreenState extends State<SignInScreen> with SingleTickerProviderSt
               const Center(
                   child: CustomLogo()
               ),
-              const Padding(
-                padding: EdgeInsets.fromLTRB(30, 50, 30, 0),
-                child: CustomTextFormField(hint: "아이디"),
-              ),
-              const Padding(
-                padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                child: CustomTextFormField(hint: "비밀번호", obscureText: true, hideIcon: true),
-              ),
               Padding(
                   padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
                   child: SizedBox(
@@ -61,7 +53,7 @@ class _SignInScreenState extends State<SignInScreen> with SingleTickerProviderSt
                     const CustomCheckBox(),
                     const SizedBox(width: 10,),
                     Text("자동로그인", style: TextStyle(fontFamily: "Paperlogy", fontSize: 15, fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.primary.withOpacity(0.86)),),
-                    Spacer()
+                    const Spacer()
                   ],
                 ),
               ),
@@ -126,7 +118,7 @@ class _SignInScreenState extends State<SignInScreen> with SingleTickerProviderSt
                   ),
                 ],
               ),
-              Spacer()
+              const Spacer()
             ],
           ),
         ),

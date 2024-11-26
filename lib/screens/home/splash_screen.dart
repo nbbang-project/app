@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:n_bbang/screens/auth/sign_in_screen.dart';
 
 import '../../widgets/custom_logo.dart';
@@ -8,6 +9,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+
     Future.delayed(
       const Duration(seconds: 3), () {
         Navigator.pushReplacement(

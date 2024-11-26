@@ -16,31 +16,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(360, 690),
+      designSize: const Size(360, 690),
       builder: (context, child) {
         return MaterialApp(
             title: "N.BBANG",
             theme: ThemeData(
-            brightness: Brightness.light,
-            scaffoldBackgroundColor: Colors.white,
-            colorScheme: const ColorScheme.light(
-            secondary: Colors.white,
-            primary: Colors.black,
-            onSurface: Colors.white
-        ),
-        ),
-        darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF0C1122),
-        colorScheme: const ColorScheme.dark(
-        secondary: Colors.black,
-        primary: Colors.white,
-        onSurface: Color(0xFF0C1122)
-        )
-        ),
-        themeMode: ThemeMode.system,
-        debugShowCheckedModeBanner: false,
-        home: const SplashScreen(),
+              brightness: Brightness.light,
+              scaffoldBackgroundColor: Colors.white,
+              colorScheme: const ColorScheme.light(
+                  secondary: Colors.white,
+                  primary: Colors.black,
+                  onSurface: Colors.white
+              ),
+            ),
+          darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              scaffoldBackgroundColor: const Color(0xFF0C1122),
+              colorScheme: const ColorScheme.dark(
+                  secondary: Colors.black,
+                  primary: Colors.white,
+                  onSurface: Color(0xFF0C1122)
+              )
+          ),
+          themeMode: ThemeMode.system,
+          debugShowCheckedModeBanner: false,
+          home: const SplashScreen(),
         );
       },
     );
